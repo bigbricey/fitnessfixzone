@@ -29,6 +29,19 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'FitnessFixZone',
+  url: 'https://fitnessfixzone.com',
+  description: 'Science-backed fitness guides, honest supplement reviews, and actionable training tips.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'FitnessFixZone',
+    url: 'https://fitnessfixzone.com',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,6 +49,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href="https://fitnessfixzone.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <nav className="nav">
           <div className="nav-inner">
