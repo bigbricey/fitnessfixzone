@@ -1,13 +1,11 @@
 'use client';
 
 export default function WeightLossSupplements() {
-    // AFFILIATE LINKS: Replace YOURID with your ClickBank nickname
+    // REAL AFFILIATE HOPLINKS (ClickBank)
     const affiliateLinks = {
-        mitolyn: 'https://hop.clickbank.net/?affiliate=YOURID&vendor=MITOLYN',
-        citrusBurn: 'https://hop.clickbank.net/?affiliate=YOURID&vendor=CITRUSBURN',
-        fitSpresso: 'https://hop.clickbank.net/?affiliate=YOURID&vendor=FITSPRESSO',
-        leanBelly: 'https://hop.clickbank.net/?affiliate=YOURID&vendor=LBDIET',
-        sugarDefender: 'https://hop.clickbank.net/?affiliate=YOURID&vendor=SUGDEFEND',
+        mitolyn: 'https://1a08ejsbmowo7y9impp9dl3kaz.hop.clickbank.net',
+        citrusBurn: 'https://a0bacdwkmfsp4u26yswgu42hpc.hop.clickbank.net',
+        javaBurn: 'https://a4531o5clekq5ka3ngg91h-ne2.hop.clickbank.net',
     };
 
     return (
@@ -69,11 +67,11 @@ export default function WeightLossSupplements() {
                             </a>
                         </div>
                         <div className="quick-pick-card">
-                            <span className="pick-badge">☕ BEST COFFEE ALTERNATIVE</span>
-                            <h3>FitSpresso</h3>
-                            <p>Replace your morning coffee with this metabolism-boosting blend. Simple daily routine.</p>
+                            <span className="pick-badge">☕ BEST COFFEE REPLACEMENT</span>
+                            <h3>Java Burn</h3>
+                            <p>Add this tasteless packet to your morning coffee to support metabolism and energy throughout the day.</p>
                             <div className="pick-rating">★★★★½ 4.6/5</div>
-                            <a href={affiliateLinks.fitSpresso} className="cta-button secondary" target="_blank" rel="noopener noreferrer nofollow">
+                            <a href={affiliateLinks.javaBurn} className="cta-button secondary" target="_blank" rel="noopener noreferrer nofollow">
                                 CHECK LATEST PRICE →
                             </a>
                         </div>
@@ -218,14 +216,14 @@ export default function WeightLossSupplements() {
                 </div>
             </section>
 
-            {/* Detailed Review #3: FitSpresso */}
+            {/* Detailed Review #3: Java Burn */}
             <section className="section review-section">
                 <div className="container">
                     <div className="review-card">
                         <div className="review-header">
                             <div>
                                 <span className="review-rank">#3</span>
-                                <h2>FitSpresso — Best Coffee Alternative for Weight Loss</h2>
+                                <h2>Java Burn — Best Coffee Add-In for Weight Management</h2>
                             </div>
                             <div className="review-score">
                                 <span className="score-number">9.0</span>
@@ -236,22 +234,44 @@ export default function WeightLossSupplements() {
                         <div className="review-body">
                             <h3>What Is It?</h3>
                             <p>
-                                FitSpresso is designed to replace your morning coffee while supporting
-                                fat metabolism throughout the day. It enhances your body's "coffee timing window"
-                                — the period where caffeine can actually support fat loss instead of just
-                                stimulating your nervous system.
+                                Java Burn is a tasteless, instantly dissolvable powder you add to your
+                                morning coffee. It's designed to work with caffeine to support metabolism
+                                and energy levels throughout the day. The concept is simple — you're already
+                                drinking coffee, so why not make it work harder for you?
                             </p>
 
                             <h3>Our Experience</h3>
                             <p>
-                                We loved the simplicity — just swap your morning coffee for this. The taste isn't
-                                coffee (manage expectations), but the sustained energy without the 2pm crash was real.
-                                Best for people who already drink coffee daily and want their habit to work harder.
+                                We liked the simplicity — just tear open a packet and stir it into your
+                                coffee. You genuinely can't taste it. The sustained energy without the
+                                usual 2pm crash was noticeable. Best for people who already drink coffee
+                                daily and want to support their metabolism without adding another pill to
+                                their routine.
                             </p>
 
+                            <div className="pros-cons">
+                                <div className="pros">
+                                    <h4>✅ Pros</h4>
+                                    <ul>
+                                        <li>Completely tasteless — dissolves in any coffee</li>
+                                        <li>No extra pills or shakes</li>
+                                        <li>Includes green tea extract, L-theanine, chromium</li>
+                                        <li>60-day money-back guarantee</li>
+                                    </ul>
+                                </div>
+                                <div className="cons">
+                                    <h4>❌ Cons</h4>
+                                    <ul>
+                                        <li>Only works with coffee (not tea or water)</li>
+                                        <li>Official website only — not on Amazon</li>
+                                        <li>Results vary by individual</li>
+                                    </ul>
+                                </div>
+                            </div>
+
                             <div className="review-verdict">
-                                <a href={affiliateLinks.fitSpresso} className="cta-button large" target="_blank" rel="noopener noreferrer nofollow">
-                                    👉 TRY FITSPRESSO — UPGRADE YOUR COFFEE →
+                                <a href={affiliateLinks.javaBurn} className="cta-button large" target="_blank" rel="noopener noreferrer nofollow">
+                                    👉 TRY JAVA BURN — ADD TO YOUR COFFEE →
                                 </a>
                             </div>
                         </div>
@@ -270,7 +290,7 @@ export default function WeightLossSupplements() {
                                     <th>Feature</th>
                                     <th className="highlight-col">Mitolyn</th>
                                     <th>CitrusBurn</th>
-                                    <th>FitSpresso</th>
+                                    <th>Java Burn</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -284,13 +304,13 @@ export default function WeightLossSupplements() {
                                     <td>Approach</td>
                                     <td className="highlight-col">Mitochondria</td>
                                     <td>Thermogenic (BAT)</td>
-                                    <td>Coffee Timing</td>
+                                    <td>Coffee Synergy</td>
                                 </tr>
                                 <tr>
                                     <td>Stimulant-Free</td>
                                     <td className="highlight-col">✅ Yes</td>
                                     <td>✅ Yes</td>
-                                    <td>⚡ Low caffeine</td>
+                                    <td>☕ With coffee</td>
                                 </tr>
                                 <tr>
                                     <td>Time to Results</td>
@@ -323,8 +343,8 @@ export default function WeightLossSupplements() {
                                         </a>
                                     </td>
                                     <td>
-                                        <a href={affiliateLinks.fitSpresso} className="table-cta" target="_blank" rel="noopener noreferrer nofollow">
-                                            GET FITSPRESSO →
+                                        <a href={affiliateLinks.javaBurn} className="table-cta" target="_blank" rel="noopener noreferrer nofollow">
+                                            GET JAVA BURN →
                                         </a>
                                     </td>
                                 </tr>
@@ -369,7 +389,7 @@ export default function WeightLossSupplements() {
                             <p>
                                 <strong>Mitolyn</strong> if you want the most comprehensive approach.{' '}
                                 <strong>CitrusBurn</strong> if you have a naturally slow metabolism.{' '}
-                                <strong>FitSpresso</strong> if you're a daily coffee drinker and want a simple swap.
+                                <strong>Java Burn</strong> if you're a daily coffee drinker and want a simple add-in.
                             </p>
                         </div>
                     </div>
