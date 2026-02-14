@@ -6,7 +6,21 @@ export default function Home() {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section className="hero">
+      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
+        <img
+          src="/images/hero.png"
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 0.25,
+            zIndex: 0,
+          }}
+        />
         <div className="container">
           <div className="hero-content">
             <div className="hero-tag">
@@ -94,6 +108,7 @@ export default function Home() {
               excerpt="Most people sabotage their fat loss without realizing it. Here's what science says you should actually do."
               readTime="8 min"
               href="/guides/weight-loss-mistakes"
+              image="/images/weight-loss-mistakes.png"
             />
             <ArticleCard
               category="Strength"
@@ -101,6 +116,7 @@ export default function Home() {
               excerpt="Everything you need to know to start lifting weights safely and build real muscle, even if you've never touched a barbell."
               readTime="12 min"
               href="/guides/beginners-strength-training"
+              image="/images/strength-training.png"
             />
             <ArticleCard
               category="Supplements"
@@ -108,6 +124,7 @@ export default function Home() {
               excerpt="We compared the top-selling weight loss supplements for ingredients, value, and real user feedback. Here's what stood out."
               readTime="12 min"
               href="/reviews/weight-loss-supplements"
+              image="/images/supplements-review.png"
             />
           </div>
         </div>
@@ -131,6 +148,7 @@ export default function Home() {
               excerpt="Build a complete home gym without breaking the bank. We compared 30+ options to find the best value setups."
               readTime="9 min"
               href="/reviews/best-home-gym-under-500"
+              image="/images/home-gym.png"
             />
             <ArticleCard
               category="Pre-Workout"
@@ -138,6 +156,7 @@ export default function Home() {
               excerpt="Not all pre-workouts are created equal. We break down ingredients, dosing, and which ones actually deliver energy without the crash."
               readTime="11 min"
               href="/reviews/best-pre-workout"
+              image="/images/pre-workout.png"
             />
             <ArticleCard
               category="Recovery"
@@ -145,6 +164,7 @@ export default function Home() {
               excerpt="The most researched supplement in history. Here's what it does, how to take it, and whether you should bother."
               readTime="7 min"
               href="/reviews/creatine-monohydrate-guide"
+              image="/images/creatine.png"
             />
           </div>
         </div>
@@ -157,8 +177,8 @@ export default function Home() {
             Ready to Fix Your <span style={{ color: "var(--accent)" }}>Fitness</span>?
           </h2>
           <p>
-            Join thousands of readers who use our free tools and evidence-based
-            guides to train smarter and get real results.
+            Use our free tools and evidence-based guides to train smarter
+            and get real results — no fluff, no bro-science.
           </p>
           <a href="/tools" className="btn btn-primary">
             Try Our Free Tools →
@@ -171,19 +191,26 @@ export default function Home() {
 
 /* ===== CALORIE CALCULATOR COMPONENT ===== */
 function CalorieCalculator() {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [age, setAge] = useState("");
+  const [weight, setWeight] = useState("180");
+  const [height, setHeight] = useState("70");
+  const [age, setAge] = useState("30");
   const [gender, setGender] = useState("male");
   const [activity, setActivity] = useState("moderate");
   const [goal, setGoal] = useState("lose");
   const [result, setResult] = useState<number | null>(null);
+  const [error, setError] = useState("");
 
-  function calculate() {
+  function calculate(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+
     const w = parseFloat(weight);
     const h = parseFloat(height);
     const a = parseFloat(age);
-    if (!w || !h || !a) return;
+
+    if (!w || w <= 0) { setError("Please enter a valid weight."); return; }
+    if (!h || h <= 0) { setError("Please enter a valid height."); return; }
+    if (!a || a <= 0 || a > 120) { setError("Please enter a valid age (1-120)."); return; }
 
     // Mifflin-St Jeor Equation
     let bmr =
@@ -208,45 +235,57 @@ function CalorieCalculator() {
   }
 
   return (
-    <>
+    <form onSubmit={calculate} noValidate>
       <div className="calculator-form">
         <div className="form-group">
-          <label>Weight (lbs)</label>
+          <label htmlFor="calc-weight">Weight (lbs)</label>
           <input
+            id="calc-weight"
             type="number"
+            min="50"
+            max="600"
             placeholder="180"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
-          <label>Height (inches)</label>
+          <label htmlFor="calc-height">Height (inches)</label>
           <input
+            id="calc-height"
             type="number"
+            min="36"
+            max="96"
             placeholder="70"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
-          <label>Age</label>
+          <label htmlFor="calc-age">Age</label>
           <input
+            id="calc-age"
             type="number"
+            min="1"
+            max="120"
             placeholder="30"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
-          <label>Gender</label>
-          <select value={gender} onChange={(e) => setGender(e.target.value)}>
+          <label htmlFor="calc-gender">Gender</label>
+          <select id="calc-gender" value={gender} onChange={(e) => setGender(e.target.value)}>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </div>
         <div className="form-group">
-          <label>Activity Level</label>
-          <select value={activity} onChange={(e) => setActivity(e.target.value)}>
+          <label htmlFor="calc-activity">Activity Level</label>
+          <select id="calc-activity" value={activity} onChange={(e) => setActivity(e.target.value)}>
             <option value="sedentary">Sedentary (desk job)</option>
             <option value="light">Light (1-2x/week)</option>
             <option value="moderate">Moderate (3-5x/week)</option>
@@ -255,8 +294,8 @@ function CalorieCalculator() {
           </select>
         </div>
         <div className="form-group">
-          <label>Goal</label>
-          <select value={goal} onChange={(e) => setGoal(e.target.value)}>
+          <label htmlFor="calc-goal">Goal</label>
+          <select id="calc-goal" value={goal} onChange={(e) => setGoal(e.target.value)}>
             <option value="lose">Lose Weight (-500 cal)</option>
             <option value="maintain">Maintain Weight</option>
             <option value="gain">Build Muscle (+300 cal)</option>
@@ -264,8 +303,14 @@ function CalorieCalculator() {
         </div>
       </div>
 
+      {error && (
+        <div style={{ textAlign: 'center', marginTop: 'var(--space-md)', color: 'var(--fire)', fontSize: '0.9rem', fontWeight: 600 }}>
+          ⚠️ {error}
+        </div>
+      )}
+
       <div style={{ textAlign: "center", marginTop: "var(--space-xl)" }}>
-        <button className="btn btn-primary" onClick={calculate}>
+        <button type="submit" className="btn btn-primary">
           Calculate My Calories
         </button>
       </div>
@@ -321,7 +366,7 @@ function CalorieCalculator() {
           </p>
         </div>
       )}
-    </>
+    </form>
   );
 }
 
@@ -332,17 +377,32 @@ function ArticleCard({
   excerpt,
   readTime,
   href,
+  image,
 }: {
   category: string;
   title: string;
   excerpt: string;
   readTime: string;
   href: string;
+  image?: string;
 }) {
   return (
     <a href={href} style={{ textDecoration: "none", color: "inherit" }}>
       <div className="content-card">
-        <div className="card-image">
+        <div className="card-image" style={{ position: 'relative', overflow: 'hidden' }}>
+          {image && (
+            <img
+              src={image}
+              alt={title}
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          )}
           <div className="card-category">{category}</div>
         </div>
         <div className="card-body">

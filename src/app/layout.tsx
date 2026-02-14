@@ -22,6 +22,21 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.fitnessfixzone.com",
     siteName: "FitnessFixZone",
+    images: [
+      {
+        url: "https://www.fitnessfixzone.com/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "FitnessFixZone — Evidence-Based Fitness, Honest Reviews, Free Tools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FitnessFixZone — Science-Backed Fitness Guides & Reviews",
+    description:
+      "Evidence-based workout guides, honest reviews, and tools to fix your fitness.",
+    images: ["https://www.fitnessfixzone.com/images/og-image.png"],
   },
   robots: {
     index: true,
