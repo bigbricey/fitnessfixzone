@@ -104,10 +104,10 @@ export default function Home() {
             />
             <ArticleCard
               category="Supplements"
-              title="Best Protein Powders in 2026: An Honest Review"
-              excerpt="We tested 15 protein powders for taste, mixability, macros, and value. Here are the ones actually worth buying."
-              readTime="10 min"
-              href="/reviews/best-protein-powder-2026"
+              title="Best Weight Loss Supplements in 2026: An Honest Review"
+              excerpt="We compared the top-selling weight loss supplements for ingredients, value, and real user feedback. Here's what stood out."
+              readTime="12 min"
+              href="/reviews/weight-loss-supplements"
             />
           </div>
         </div>
@@ -296,6 +296,28 @@ function CalorieCalculator() {
               : goal === "gain"
                 ? "This adds 300 calories above maintenance for lean muscle building."
                 : "This is your estimated daily energy expenditure."}
+          </p>
+        </div>
+      )}
+
+      {result && goal === 'lose' && (
+        <div style={{
+          marginTop: 'var(--space-lg)',
+          padding: 'var(--space-lg)',
+          background: 'var(--accent-subtle)',
+          border: '1px solid rgba(204, 255, 0, 0.15)',
+          borderRadius: 'var(--radius-md)',
+          textAlign: 'center'
+        }}>
+          <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', margin: '0 auto var(--space-md)', maxWidth: '500px' }}>
+            Looking for supplements that may support your weight loss journey?
+            We reviewed the top options for 2026.
+          </p>
+          <a href="/reviews/weight-loss-supplements" className="cta-button">
+            See Our 2026 Supplement Review →
+          </a>
+          <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: 'var(--space-sm)' }}>
+            Contains affiliate links · Individual results may vary
           </p>
         </div>
       )}
