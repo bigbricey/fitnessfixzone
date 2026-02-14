@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Privacy Policy — FitnessFixZone",
     description: "FitnessFixZone privacy policy and data collection practices.",
+    alternates: { canonical: "https://www.fitnessfixzone.com/privacy" },
 };
 
 export default function PrivacyPage() {

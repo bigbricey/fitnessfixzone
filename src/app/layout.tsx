@@ -20,12 +20,15 @@ export const metadata: Metadata = {
     description:
       "Evidence-based workout guides, honest reviews, and tools to fix your fitness.",
     type: "website",
-    url: "https://fitnessfixzone.com",
+    url: "https://www.fitnessfixzone.com",
     siteName: "FitnessFixZone",
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://www.fitnessfixzone.com",
   },
 };
 
@@ -33,12 +36,12 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'FitnessFixZone',
-  url: 'https://fitnessfixzone.com',
+  url: 'https://www.fitnessfixzone.com',
   description: 'Science-backed fitness guides, honest supplement reviews, and actionable training tips.',
   publisher: {
     '@type': 'Organization',
     name: 'FitnessFixZone',
-    url: 'https://fitnessfixzone.com',
+    url: 'https://www.fitnessfixzone.com',
   },
 };
 
@@ -50,36 +53,39 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://fitnessfixzone.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
-        <nav className="nav">
-          <div className="nav-inner">
-            <a href="/" className="nav-logo">
-              FITNESS<span className="accent">FIX</span>ZONE
-            </a>
-            <ul className="nav-links">
-              <li>
-                <a href="/guides">Guides</a>
-              </li>
-              <li>
-                <a href="/reviews">Reviews</a>
-              </li>
-              <li>
-                <a href="/tools">Tools</a>
-              </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <header>
+          <nav className="nav">
+            <div className="nav-inner">
+              <a href="/" className="nav-logo">
+                FITNESS<span className="accent">FIX</span>ZONE
+              </a>
+              <ul className="nav-links" id="nav-menu">
+                <li>
+                  <a href="/guides">Guides</a>
+                </li>
+                <li>
+                  <a href="/reviews">Reviews</a>
+                </li>
+                <li>
+                  <a href="/tools">Tools</a>
+                </li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
+              </ul>
+              <MobileMenuButton />
+            </div>
+          </nav>
+        </header>
 
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
 
         <footer className="footer">
           <div className="footer-inner">
@@ -101,5 +107,27 @@ export default function RootLayout({
         </footer>
       </body>
     </html>
+  );
+}
+
+function MobileMenuButton() {
+  return (
+    <>
+      <input type="checkbox" id="mobile-menu-toggle" className="mobile-menu-checkbox" aria-label="Toggle navigation menu" />
+      <label htmlFor="mobile-menu-toggle" className="hamburger" aria-label="Menu">
+        <span className="hamburger-line" />
+        <span className="hamburger-line" />
+        <span className="hamburger-line" />
+      </label>
+      <div className="mobile-menu-overlay">
+        <ul className="mobile-menu-links">
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/tools">Tools</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </>
   );
 }

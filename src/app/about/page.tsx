@@ -4,6 +4,7 @@ export const metadata: Metadata = {
     title: "About — FitnessFixZone",
     description:
         "Learn about FitnessFixZone: a science-backed fitness resource providing evidence-based workout guides, honest supplement reviews, and free training tools.",
+    alternates: { canonical: "https://www.fitnessfixzone.com/about" },
 };
 
 export default function AboutPage() {
@@ -18,7 +19,7 @@ export default function AboutPage() {
                 <div style={{ maxWidth: "700px" }}>
                     <p style={{ marginBottom: "var(--space-lg)" }}>
                         <strong style={{ color: "var(--text-primary)" }}>FitnessFixZone</strong> was
-                        founded in 2011 with a simple mission: cut through the noise in the fitness
+                        built with a simple mission: cut through the noise in the fitness
                         industry and deliver evidence-based information that actually helps people
                         reach their goals.
                     </p>

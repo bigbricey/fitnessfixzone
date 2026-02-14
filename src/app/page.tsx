@@ -16,7 +16,7 @@ export default function Home() {
             <h1>
               Fix Your <span className="highlight">Fitness</span>
               <br />
-              Start Today
+              {' '}Start Today
             </h1>
             <p>
               No bro-science. No fad diets. Just evidence-based workout guides,
@@ -40,20 +40,20 @@ export default function Home() {
         <div className="container">
           <div className="stats-bar">
             <div className="stat-item">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Expert Guides</div>
+              <div className="stat-number">7+</div>
+              <div className="stat-label">In-Depth Guides</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">100K+</div>
-              <div className="stat-label">Readers Helped</div>
+              <div className="stat-number">100%</div>
+              <div className="stat-label">Evidence-Based</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">4.8★</div>
-              <div className="stat-label">Average Rating</div>
+              <div className="stat-number">0</div>
+              <div className="stat-label">Bro-Science</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">2011</div>
-              <div className="stat-label">Est. Since</div>
+              <div className="stat-number">Free</div>
+              <div className="stat-label">All Tools</div>
             </div>
           </div>
         </div>

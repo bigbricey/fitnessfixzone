@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Disclaimer — FitnessFixZone",
     description: "FitnessFixZone affiliate and medical disclaimer.",
+    alternates: { canonical: "https://www.fitnessfixzone.com/disclaimer" },
 };
 
 export default function DisclaimerPage() {
