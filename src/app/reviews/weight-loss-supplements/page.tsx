@@ -26,6 +26,11 @@ export default function WeightLossSupplements() {
                         and compared them based on ingredients, user reviews, and value.
                         Here's what stood out. Individual results may vary.
                     </p>
+                    <img
+                        src="/images/supplements-review.png"
+                        alt="Three unbranded supplement bottles with different colored caps — weight loss supplements compared"
+                        style={{ width: '100%', maxWidth: '500px', borderRadius: 'var(--radius-md)', margin: 'var(--space-xl) auto var(--space-lg)', display: 'block' }}
+                    />
                     <div className="disclosure-box">
                         <strong>⚠️ ADVERTISING DISCLOSURE:</strong> FitnessFixZone.com is an affiliate
                         site. We earn a commission when you purchase through our links — at no extra

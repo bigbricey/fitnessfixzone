@@ -4,6 +4,9 @@ export const metadata: Metadata = {
     title: "Creatine Monohydrate: The Only Supplement You Need? | FitnessFixZone",
     description: "Creatine is the most researched supplement in history. Here's what it does, how to take it, myths debunked, and whether you should bother.",
     alternates: { canonical: "https://www.fitnessfixzone.com/reviews/creatine-monohydrate-guide" },
+    openGraph: {
+        images: [{ url: "https://www.fitnessfixzone.com/images/creatine.png", width: 640, height: 640 }],
+    },
 };
 
 export default function CreatineGuide() {
@@ -21,6 +24,11 @@ export default function CreatineGuide() {
                         There&apos;s one supplement that has more peer-reviewed research behind it than all others combined.
                         It&apos;s cheap, safe, and actually works. Let&apos;s talk about creatine monohydrate.
                     </p>
+                    <img
+                        src="/images/creatine.png"
+                        alt="Creatine monohydrate powder being stirred into a glass of water"
+                        style={{ width: '100%', maxWidth: '600px', borderRadius: 'var(--radius-md)', margin: 'var(--space-xl) auto 0', display: 'block' }}
+                    />
                 </div>
             </section>
 

@@ -4,6 +4,9 @@ export const metadata: Metadata = {
     title: "Best Pre-Workout Supplements (2026): Tested & Ranked | FitnessFixZone",
     description: "We tested the top pre-workout supplements of 2026 for energy, pump, focus, and crash factor. Here's what actually works and what's overhyped.",
     alternates: { canonical: "https://www.fitnessfixzone.com/reviews/best-pre-workout" },
+    openGraph: {
+        images: [{ url: "https://www.fitnessfixzone.com/images/pre-workout.png", width: 640, height: 640 }],
+    },
 };
 
 export default function BestPreWorkout() {
@@ -22,6 +25,11 @@ export default function BestPreWorkout() {
                         Others are glorified caffeine pills with pixie-dust dosing. We break down exactly what
                         to look for.
                     </p>
+                    <img
+                        src="/images/pre-workout.png"
+                        alt="Pre-workout supplement ingredients: caffeine capsules, beta-alanine, citrulline malate, and creatine powder on dark slate"
+                        style={{ width: '100%', maxWidth: '600px', borderRadius: 'var(--radius-md)', margin: 'var(--space-xl) auto 0', display: 'block' }}
+                    />
                 </div>
             </section>
 

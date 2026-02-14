@@ -4,6 +4,9 @@ export const metadata: Metadata = {
     title: "Best Home Gym Equipment Under $500 (2026) | FitnessFixZone",
     description: "Build a complete home gym for under $500. We compared 30+ options to find the best budget-friendly setups for strength training at home.",
     alternates: { canonical: "https://www.fitnessfixzone.com/reviews/best-home-gym-under-500" },
+    openGraph: {
+        images: [{ url: "https://www.fitnessfixzone.com/images/home-gym.png", width: 640, height: 640 }],
+    },
 };
 
 export default function BestHomeGym() {
@@ -21,6 +24,11 @@ export default function BestHomeGym() {
                         You don&apos;t need a commercial gym to get strong. With $500 or less, you can build a
                         home setup that covers all the essential movement patterns. Here&apos;s exactly what to buy.
                     </p>
+                    <img
+                        src="/images/home-gym.png"
+                        alt="Clean, organized home gym in a garage with adjustable dumbbells, bench, and resistance bands"
+                        style={{ width: '100%', maxWidth: '600px', borderRadius: 'var(--radius-md)', margin: 'var(--space-xl) auto 0', display: 'block' }}
+                    />
                 </div>
             </section>
 
@@ -42,6 +50,11 @@ export default function BestHomeGym() {
                             <li><strong>Flat/Incline Bench</strong> — ~$80-100. Look for a 1,000 lb rated bench with adjustable positions.</li>
                             <li><strong>Pull-up Bar (doorframe)</strong> — ~$25. Covers all your pulling needs. Get a multi-grip version.</li>
                         </ul>
+                        <img
+                            src="/images/adjustable-dumbbells.png"
+                            alt="Adjustable dumbbells on a stand — the single best home gym investment"
+                            style={{ width: '100%', maxWidth: '400px', borderRadius: 'var(--radius-md)', margin: 'var(--space-lg) auto 0', display: 'block' }}
+                        />
                     </div>
 
                     <div style={{ background: 'var(--bg-secondary)', padding: 'var(--space-xl)', borderRadius: 'var(--radius-md)', marginBottom: 'var(--space-lg)' }}>

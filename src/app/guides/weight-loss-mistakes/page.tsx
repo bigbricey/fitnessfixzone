@@ -4,6 +4,9 @@ export const metadata: Metadata = {
     title: "5 Biggest Weight Loss Mistakes (And How to Fix Them) | FitnessFixZone",
     description: "Most people sabotage their fat loss without knowing it. Learn the 5 biggest weight loss mistakes backed by science and exactly how to fix them.",
     alternates: { canonical: "https://www.fitnessfixzone.com/guides/weight-loss-mistakes" },
+    openGraph: {
+        images: [{ url: "https://www.fitnessfixzone.com/images/weight-loss-mistakes.png", width: 640, height: 640 }],
+    },
 };
 
 export default function WeightLossMistakes() {
@@ -22,6 +25,11 @@ export default function WeightLossMistakes() {
                         without realizing it. Here are the five most common fat-loss mistakes we see, and what science
                         says you should do instead.
                     </p>
+                    <img
+                        src="/images/weight-loss-mistakes.png"
+                        alt="Measuring tape, scale, food journal, and healthy meal — common weight loss tracking tools"
+                        style={{ width: '100%', maxWidth: '600px', borderRadius: 'var(--radius-md)', margin: 'var(--space-xl) auto 0', display: 'block' }}
+                    />
                 </div>
             </section>
 

@@ -4,6 +4,9 @@ export const metadata: Metadata = {
     title: "Beginner's Guide to Strength Training (2026) | FitnessFixZone",
     description: "Everything you need to start lifting weights safely and build real muscle. Covers equipment, exercises, programming, and common mistakes beginners make.",
     alternates: { canonical: "https://www.fitnessfixzone.com/guides/beginners-strength-training" },
+    openGraph: {
+        images: [{ url: "https://www.fitnessfixzone.com/images/strength-training.png", width: 640, height: 640 }],
+    },
 };
 
 export default function BeginnersStrengthTraining() {
@@ -21,6 +24,11 @@ export default function BeginnersStrengthTraining() {
                         You don&apos;t need to be jacked to start lifting. This guide covers everything a total beginner
                         needs: equipment, exercises, programming, and the mistakes that slow people down.
                     </p>
+                    <img
+                        src="/images/strength-training.png"
+                        alt="Chalked hands gripping a barbell for deadlift — the foundation of strength training"
+                        style={{ width: '100%', maxWidth: '600px', borderRadius: 'var(--radius-md)', margin: 'var(--space-xl) auto 0', display: 'block' }}
+                    />
                 </div>
             </section>
 
@@ -60,6 +68,11 @@ export default function BeginnersStrengthTraining() {
                         <li><strong>Pull</strong> — Barbell row, pull-ups, or cable rows</li>
                         <li><strong>Carry/Core</strong> — Farmer&apos;s walks, planks, or pallof press</li>
                     </ul>
+                    <img
+                        src="/images/deadlift-form.png"
+                        alt="Proper conventional deadlift form — side view showing straight back and shoulder alignment"
+                        style={{ width: '100%', maxWidth: '500px', borderRadius: 'var(--radius-md)', margin: 'var(--space-xl) auto', display: 'block' }}
+                    />
 
                     <h2 className="section-heading" style={{ marginTop: 'var(--space-2xl)' }}>A Simple 3-Day Beginner Program</h2>
                     <p>
