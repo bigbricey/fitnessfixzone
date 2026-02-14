@@ -54,7 +54,7 @@ export default function Home() {
         <div className="container">
           <div className="stats-bar">
             <div className="stat-item">
-              <div className="stat-number">7+</div>
+              <div className="stat-number">30+</div>
               <div className="stat-label">In-Depth Guides</div>
             </div>
             <div className="stat-item">
@@ -166,6 +166,86 @@ export default function Home() {
               href="/reviews/creatine-monohydrate-guide"
               image="/images/creatine.png"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FITNESS LIBRARY (Historical Articles) ===== */}
+      <section>
+        <div className="container">
+          <div className="section-header">
+            <span className="label">Fitness Library</span>
+            <h2>Exercise Guides &amp; Tips</h2>
+            <p>
+              Our comprehensive library of exercise guides, bodybuilding tips, and
+              fitness fundamentals — established since 2011.
+            </p>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: 'var(--space-md)',
+          }}>
+            {[
+              { title: '9 Exercise Myths to Avoid', href: '/9-exercise-myths-to-avoid', tag: 'Myths' },
+              { title: 'Exercise at Home or the Gym?', href: '/exercise-at-home-or-the-gym', tag: 'Training' },
+              { title: 'Exercise and Your Complexion', href: '/exercise-and-your-complexion', tag: 'Health' },
+              { title: 'Exercise Back Pain Away', href: '/exercise-back-pain-away', tag: 'Recovery' },
+              { title: 'How to Choose an Exercise Bike', href: '/how-to-choose-an-exercise-bike', tag: 'Equipment' },
+              { title: 'Benefits of Water During Exercise', href: '/the-key-benefits-of-drinking-water-during-exercise', tag: 'Nutrition' },
+              { title: 'How to Quit Smoking with Exercise', href: '/how-to-quit-smoking-with-exercise', tag: 'Health' },
+              { title: 'Free Weights vs Machines', href: '/free-weights-vs-machines', tag: 'Training' },
+              { title: '5 Components of Physical Fitness', href: '/5-important-components-of-physical-fitness', tag: 'Fundamentals' },
+              { title: '5 Exercise Mistakes to Avoid', href: '/5-exercise-mistakes-and-misconceptions', tag: 'Mistakes' },
+              { title: 'Top Reasons to Exercise Regularly', href: '/top-reasons-to-exercise-regularly', tag: 'Motivation' },
+              { title: 'How to Exercise Properly', href: '/how-to-exercise-properly', tag: 'Fundamentals' },
+              { title: 'Bodybuilding Tips for Men', href: '/bodybuilding-tips-for-men', tag: 'Bodybuilding' },
+              { title: 'Top Bodybuilding Workout Tips', href: '/top-bodybuilding-workout-tips', tag: 'Bodybuilding' },
+              { title: 'Bodybuilding Tips for Women', href: '/the-best-bodybuilding-tips-for-female-bodybuilders', tag: 'Bodybuilding' },
+              { title: 'Best Abdominal Exercise Tips', href: '/best-abdominal-exercises-tips', tag: 'Core' },
+              { title: 'Is Bodybuilding a Sport?', href: '/is-bodybuilding-a-sport', tag: 'Bodybuilding' },
+              { title: 'Cardio Exercise Tips', href: '/cardio-exercise-tips', tag: 'Cardio' },
+              { title: 'Eating and Exercise', href: '/the-importance-of-eating-and-exercise', tag: 'Nutrition' },
+              { title: 'Exercise Videos & Resources', href: '/exercise-videos', tag: 'Resources' },
+            ].map((article) => (
+              <a
+                key={article.href}
+                href={article.href}
+                style={{
+                  display: 'block',
+                  padding: 'var(--space-md) var(--space-lg)',
+                  background: 'var(--surface)',
+                  borderRadius: 'var(--radius-md)',
+                  border: '1px solid var(--border)',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'border-color 0.2s, transform 0.2s',
+                }}
+                onMouseOver={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--accent)';
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                }}
+                onMouseOut={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)';
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <span style={{
+                  display: 'inline-block',
+                  fontSize: '0.65rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  color: 'var(--accent)',
+                  marginBottom: '4px',
+                }}>{article.tag}</span>
+                <div style={{
+                  fontSize: '0.95rem',
+                  fontWeight: 600,
+                  lineHeight: 1.3,
+                }}>{article.title}</div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
