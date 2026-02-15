@@ -119,21 +119,23 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
 
         <footer className="footer">
-          <div className="footer-inner">
-            <div>
-              © {new Date().getFullYear()} FitnessFixZone. All rights reserved.
+          <div className="footer-inner" style={{ flexDirection: 'column', gap: 'var(--space-xl)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', flexWrap: 'wrap', gap: 'var(--space-md)' }}>
+              <div>
+                © {new Date().getFullYear()} FitnessFixZone. All rights reserved.
+              </div>
+              <ul className="footer-links">
+                <li>
+                  <a href="/privacy">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="/disclaimer">Disclaimer</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact</a>
+                </li>
+              </ul>
             </div>
-            <ul className="footer-links">
-              <li>
-                <a href="/privacy">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="/disclaimer">Disclaimer</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
-            </ul>
           </div>
         </footer>
       </body>

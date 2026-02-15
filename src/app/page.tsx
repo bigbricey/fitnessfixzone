@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 
 export default function Home() {
   return (
@@ -250,6 +250,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== NEWSLETTER SIGNUP ===== */}
+      <section className="newsletter-section">
+        <div className="container">
+          <span className="label" style={{
+            display: 'inline-block',
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '0.2em',
+            color: 'var(--accent)',
+            marginBottom: 'var(--space-md)',
+          }}>Free Weekly Tips</span>
+          <h2>Get Smarter About <span style={{ color: 'var(--accent)' }}>Fitness</span></h2>
+          <p>
+            One email per week with science-backed tips, new guides, and supplement
+            deals. No spam, unsubscribe anytime.
+          </p>
+          <NewsletterForm />
+        </div>
+      </section>
+
       {/* ===== CTA ===== */}
       <section className="cta-section">
         <div className="container">
@@ -447,6 +468,72 @@ function CalorieCalculator() {
         </div>
       )}
     </form>
+  );
+}
+
+/* ===== NEWSLETTER FORM COMPONENT ===== */
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!email || status === "sending") return;
+
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/bigbricey@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          email,
+          _subject: "New FitnessFixZone subscriber!",
+          _template: "table",
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="newsletter-success">
+        You&apos;re in! Check your inbox for a confirmation.
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <form className="newsletter-form" onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          aria-label="Email address"
+        />
+        <button type="submit" disabled={status === "sending"}>
+          {status === "sending" ? "Joining..." : "Join Free"}
+        </button>
+      </form>
+      {status === "error" && (
+        <div style={{ color: "var(--fire)", fontSize: "0.85rem", marginTop: "var(--space-sm)" }}>
+          Something went wrong. Try again.
+        </div>
+      )}
+      <div className="newsletter-privacy">
+        No spam ever. Unsubscribe with one click.
+      </div>
+    </>
   );
 }
 
