@@ -38,7 +38,7 @@ export default function Home() {
               goals faster.
             </p>
             <div className="hero-buttons">
-              <a href="/tools" className="btn btn-primary">
+              <a href="/#calculator" className="btn btn-primary">
                 Free Calorie Calculator →
               </a>
               <a href="/guides" className="btn btn-secondary">
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="container">
           <div className="stats-bar">
             <div className="stat-item">
-              <div className="stat-number">30+</div>
+              <div className="stat-number">25+</div>
               <div className="stat-label">In-Depth Guides</div>
             </div>
             <div className="stat-item">
@@ -293,7 +293,8 @@ export default function Home() {
 /* ===== CALORIE CALCULATOR COMPONENT ===== */
 function CalorieCalculator() {
   const [weight, setWeight] = useState("180");
-  const [height, setHeight] = useState("70");
+  const [heightFeet, setHeightFeet] = useState("5");
+  const [heightInches, setHeightInches] = useState("10");
   const [age, setAge] = useState("30");
   const [gender, setGender] = useState("male");
   const [activity, setActivity] = useState("moderate");
@@ -306,7 +307,7 @@ function CalorieCalculator() {
     setError("");
 
     const w = parseFloat(weight);
-    const h = parseFloat(height);
+    const h = (parseFloat(heightFeet) || 0) * 12 + (parseFloat(heightInches) || 0);
     const a = parseFloat(age);
 
     if (!w || w <= 0) { setError("Please enter a valid weight."); return; }
@@ -351,18 +352,33 @@ function CalorieCalculator() {
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="calc-height">Height (inches)</label>
-          <input
-            id="calc-height"
-            type="number"
-            min="36"
-            max="96"
-            placeholder="70"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            required
-          />
+        <div className="form-group" style={{ display: 'flex', gap: 'var(--space-md)' }}>
+          <div style={{ flex: 1 }}>
+            <label htmlFor="calc-height-ft">Height (ft)</label>
+            <input
+              id="calc-height-ft"
+              type="number"
+              min="3"
+              max="8"
+              placeholder="5"
+              value={heightFeet}
+              onChange={(e) => setHeightFeet(e.target.value)}
+              required
+            />
+          </div>
+          <div style={{ flex: 1 }}>
+            <label htmlFor="calc-height-in">Height (in)</label>
+            <input
+              id="calc-height-in"
+              type="number"
+              min="0"
+              max="11"
+              placeholder="10"
+              value={heightInches}
+              onChange={(e) => setHeightInches(e.target.value)}
+              required
+            />
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="calc-age">Age</label>
